@@ -1,0 +1,50 @@
+@import "../mixins.scss";
+.container__category {
+  flex: 1;
+  margin: 3px;
+  height: 48vh;
+  position: relative;
+  margin-top: 10%;
+  margin-bottom: -24%;
+  @include md {
+    margin-bottom: 15%;
+  }
+
+  .image_category {
+    width: 100%;
+    height: 63%;
+    object-fit: contain;
+    @include md {
+      padding: 0px;
+      flex-direction: column;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  .info__category {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info__title{
+    color:white;
+    margin-bottom: 20px;
+  }
+
+  .shop__category{
+    border:none;
+    padding: 10px;
+    background-color: white;
+    color:gray;
+    cursor: pointer;
+    font-weight: 600; 
+  }
+}

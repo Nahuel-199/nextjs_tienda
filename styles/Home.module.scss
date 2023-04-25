@@ -1,0 +1,17 @@
+.container__products{
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .content-title{
+      width: 100%;
+  }
+  .section__title{
+  text-align: center;
+  color: gray;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 55px;
+  }
+}

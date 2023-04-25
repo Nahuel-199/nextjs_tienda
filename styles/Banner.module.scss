@@ -1,0 +1,123 @@
+@import "../mixins.scss";
+.herobanner {
+    padding: 40px 0;
+    position: relative;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    @include md {
+        height: calc(100vh - 80px);
+    }
+    .content {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        position: relative;
+        @include md {
+            flex-direction: row;
+            max-width: 1200px;
+        }
+        .bannerimg {
+            position: relative;
+            z-index: 9;
+            width: 350px;
+            margin-bottom: 20px;
+            @include md {
+                width: 650px;
+                margin-right: -10px;
+                margin-top: 50px;
+                margin-bottom: 0;
+            }
+            @include xxl {
+                width: 600px;
+                margin-right: 0;
+                margin-top: 0;
+            }
+        }
+        .textcontent {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 99;
+            @include md {
+                position: absolute;
+                left: 50px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            @include xxl {
+                left: 0;
+            }
+            h1 {
+                font-size: 80px;
+                font-weight: 700;
+                line-height: 1;
+                color: white;
+                margin-bottom: 20px;
+                @include md {
+                    font-size: 180px;
+                }
+            }
+            p {
+                max-width: 300px;
+                font-size: 38px;
+                line-height: 20px;
+                margin-bottom: 20px;
+                @include md {
+                    max-width: 500px;
+                    font-size: 38px;
+                    line-height: 24px;
+                    margin-bottom: 40px;
+                }
+            }
+            .ctas {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                button {
+                    padding: 0.1em 0.25em;
+                    width: 13em;
+                    height: 4.2em;
+                    background-color: #ffffff;
+                    border: 0.08em solid #fff;
+                    border-radius: 0.3em;
+                    font-size: 12px;
+                  }
+                  
+                  button span {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    bottom: 0.4em;
+                    width: 8.25em;
+                    height: 2.5em;
+                    background-color: #2e2e2e;
+                    border-radius: 0.2em;
+                    font-size: 1.5em;
+                    color: #fff;
+                    border: 0.08em solid #fff;
+                    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+                    font-weight: 700;
+                  }
+                  
+                  button span:hover {
+                    transition: all 0.5s;
+                    transform: translate(0, 0.4em);
+                    box-shadow: 0 0 0 0 #fff;
+                  }
+                  
+                  button span:not(hover) {
+                    transition: all 1s;
+                  }
+                  
+                  
+            }
+        }
+    }
+}

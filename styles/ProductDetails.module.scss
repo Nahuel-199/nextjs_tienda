@@ -1,0 +1,224 @@
+@import "../mixins.scss";
+.single_product_main_content {
+  margin: 20px 0;
+  @include md {
+    margin: 75px 0;
+  }
+  .layout {
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    @include md {
+      max-width: 1200px;
+    }
+    .single_product_page {
+      display: flex;
+      flex-direction: column;
+      @include md {
+        flex-direction: row;
+      }
+      .left {
+        width: 100%;
+        /* background-color: rgba(0, 0, 0, 0.05); */
+        background-image: url("../public/assets/fondoCard.jpg");
+        background-size: cover;
+        flex-shrink: 0;
+        @include md {
+          width: 600px;
+          height: 600px;
+        }
+        img {
+          width: 100%;
+          display: block;
+          transform: scale(1);
+        }
+        img:hover {
+          transform: scale(1.1);
+        }
+      }
+      .twoImg {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+      .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .img_thumbnail {
+        display: inline-block;
+        max-width: 100%;
+        padding: 0.25rem;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+        margin-left: 5%;
+        width: 50%;
+        height: auto;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        @include md {
+          padding: 0 35px;
+        }
+        .btn {
+            width: 6.5em;
+            height: 2.3em;
+            margin: 0.5em;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 0.625em;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            .btn:hover {
+                color: black;
+               }
+               
+               .btn:after {
+                content: "";
+                background: white;
+                position: absolute;
+                z-index: -1;
+                left: -20%;
+                right: -20%;
+                top: 0;
+                bottom: 0;
+                transform: skewX(-45deg) scale(0, 1);
+                transition: all 0.5s;
+               }
+               
+               .btn:hover:after {
+                transform: skewX(-45deg) scale(1, 1);
+                -webkit-transition: all 0.5s;
+                transition: all 0.5s;
+               }
+           }
+        .name {
+          font-size: 20px;
+          line-height: 28px;
+          margin-bottom: 20px;
+          @include md {
+            font-size: 24px;
+            line-height: 32px;
+          }
+        }
+        .color {
+          font-size: 18px;
+          line-height: 28px;
+          margin-bottom: 20px;
+          color: gray;
+          @include md {
+            font-size: 18px;
+            line-height: 32px;
+          }
+        }
+        .price {
+          font-size: 24px;
+          line-height: 32px;
+          margin-bottom: 20px;
+        }
+        .desc {
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 20px;
+          color: #6b6b6b;
+          @include md {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 20px;
+          }
+        }
+
+        .cart_buttons {
+          display: flex;
+          @include md {
+            margin-top: 30px;
+          }
+          .quantity_buttons {
+            width: fit-content;
+            display: flex;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+            margin-right: 10px;
+            height: 50px;
+            span {
+              font-size: 18px;
+              width: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              color: #6b6b6b;
+              &:nth-child(1) {
+                border-right: 2px solid rgba(0, 0, 0, 0.2);
+              }
+              &:nth-child(2) {
+                width: 60px;
+              }
+              &:nth-child(3) {
+                border-left: 2px solid rgba(0, 0, 0, 0.2);
+              }
+            }
+          }
+          .add_to_cart_button {
+            outline: 0;
+            border: 0;
+            height: 50px;
+            width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            background: #8e2de2;
+            border-bottom: 3px solid #6516aa;
+            flex-grow: 1;
+            @include md {
+              flex-grow: unset;
+            }
+            svg {
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .divider {
+          margin: 20px 0;
+          height: 1px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .info_item {
+          .text_bold {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: block;
+            &:nth-child(1) {
+              margin-bottom: 20px;
+            }
+            span {
+              font-size: 16px;
+              font-weight: 400;
+              cursor: pointer;
+              color: #6b6b6b;
+            }
+            svg {
+              margin: 0 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
